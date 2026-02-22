@@ -16,9 +16,9 @@
       --trust-blue:#1E293B;
       --soft-bg:#F8FAFC;
 
-      /* scrolling slider vars (from your template) */
-      --total-items: 9;
-      --animation-duration: 30s;
+      /* scrolling slider vars */
+      --total-items: 8;           /* ✅ 8 фото */
+      --animation-duration: 28s;  /* чуть быстрее */
     }
 
     html, body { max-width: 100%; overflow-x: clip; }
@@ -84,7 +84,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* ===== Scrolling slider (your template) ===== */
+    /* ===== Scrolling slider ===== */
     .scorlling{
       width:100%;
       max-width:1536px;
@@ -95,7 +95,6 @@
       mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
       -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
     }
-
     .scorlling img{
       width:100%;
       height:100%;
@@ -125,6 +124,7 @@
       border: 4px solid rgba(255,255,255,.8);
     }
 
+    /* ✅ delays only for 8 items */
     .item1 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 1) * -1); }
     .item2 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 2) * -1); }
     .item3 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 3) * -1); }
@@ -133,7 +133,6 @@
     .item6 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 6) * -1); }
     .item7 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 7) * -1); }
     .item8 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 8) * -1); }
-    .item9 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 9) * -1); }
     /* ===== /Scrolling slider ===== */
   </style>
 </head>
@@ -171,7 +170,7 @@
         </button>
       </div>
 
-      <!-- Mobile menu (absolute => nav height doesn't grow) -->
+      <!-- Mobile menu -->
       <div id="mobileMenu"
            class="md:hidden absolute left-0 right-0 top-full bg-white/95 backdrop-blur-md border-t border-slate-100 menu-collapsed">
         <div class="container mx-auto px-4 py-4">
@@ -184,7 +183,7 @@
             </a>
           </div>
 
-          <!-- Clean list (no extra words) -->
+          <!-- Clean list -->
           <div class="grid grid-cols-1 gap-2 max-h-[60vh] overflow-auto pr-1">
             <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between">
               <span>Караганда</span><span class="text-slate-400 font-bold text-sm">24/7</span>
@@ -292,15 +291,6 @@
               <i class="fab fa-whatsapp text-2xl"></i> Отправить локацию
             </a>
           </div>
-
-          <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 opacity-70">
-            <div class="flex -space-x-3">
-              <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-white"></div>
-              <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-white"></div>
-              <div class="w-10 h-10 rounded-full bg-gray-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">24/7</div>
-            </div>
-            <div class="text-sm font-bold text-slate-400">На линии круглосуточно</div>
-          </div>
         </div>
 
         <div class="w-full lg:w-1/2 relative overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
@@ -375,48 +365,28 @@
         </a>
       </div>
 
-      <!-- SCROLLING PHOTOS (added right after "Чем мы поможем?") -->
+      <!-- ✅ SCROLLING PHOTOS: 8 local images -->
       <div class="mt-14" data-aos="fade-up">
         <div class="text-center mb-6">
           <h3 class="text-2xl font-black text-slate-900">Фото <span class="text-red-500">работ</span></h3>
-          <p class="text-slate-500 font-medium mt-2">Лента прокручивается автоматически.</p>
         </div>
 
         <div class="mx-auto scorlling rounded-[28px] bg-white border border-slate-100">
-          <div class="item item1">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/22818.jpg" alt="Фото 1" />
-          </div>
-          <div class="item item2">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/22582.png" alt="Фото 2" />
-          </div>
-          <div class="item item3">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24763.jpg" alt="Фото 3" />
-          </div>
-          <div class="item item4">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/20822.png" alt="Фото 4" />
-          </div>
-          <div class="item item5">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/25019.png" alt="Фото 5" />
-          </div>
-          <div class="item item6">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/20031.jpg" alt="Фото 6" />
-          </div>
-          <div class="item item7">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/18785.jpg" alt="Фото 7" />
-          </div>
-          <div class="item item8">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/17605.png" alt="Фото 8" />
-          </div>
-          <div class="item item9">
-            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/25015.jpg" alt="Фото 9" />
-          </div>
+          <div class="item item1"><img src="images/img1.jpg" alt="Фото 1" loading="lazy" decoding="async"></div>
+          <div class="item item2"><img src="images/img2.jpg" alt="Фото 2" loading="lazy" decoding="async"></div>
+          <div class="item item3"><img src="images/img3.jpg" alt="Фото 3" loading="lazy" decoding="async"></div>
+          <div class="item item4"><img src="images/img4.jpg" alt="Фото 4" loading="lazy" decoding="async"></div>
+          <div class="item item5"><img src="images/img5.jpg" alt="Фото 5" loading="lazy" decoding="async"></div>
+          <div class="item item6"><img src="images/img6.jpg" alt="Фото 6" loading="lazy" decoding="async"></div>
+          <div class="item item7"><img src="images/img7.jpg" alt="Фото 7" loading="lazy" decoding="async"></div>
+          <div class="item item8"><img src="images/img8.jpg" alt="Фото 8" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <!-- /SCROLLING PHOTOS -->
     </div>
   </section>
 
-  <!-- REGIONS (page section stays) -->
+  <!-- REGIONS -->
   <section id="regions" class="py-20 bg-slate-50 overflow-hidden">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto">
@@ -426,7 +396,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- short cards -->
+          <!-- cards -->
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -436,7 +406,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -446,7 +415,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -456,7 +424,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -466,7 +433,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -476,7 +442,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -486,7 +451,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -496,7 +460,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -506,7 +469,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -516,7 +478,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -526,7 +487,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -536,7 +496,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -546,7 +505,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -556,7 +514,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -566,7 +523,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -576,7 +532,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -586,7 +541,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -596,7 +550,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -606,7 +559,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -616,7 +568,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -626,7 +577,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -636,7 +586,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
@@ -646,7 +595,6 @@
               </div>
             </div>
           </a>
-
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
