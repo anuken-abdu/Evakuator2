@@ -17,7 +17,7 @@
       --soft-bg:#F8FAFC;
 
       /* scrolling slider vars */
-      --total-items: 8;           /* ✅ 8 фото */
+      --total-items: 8;
       --animation-duration: 28s;
     }
 
@@ -101,6 +101,7 @@
       transition: all .25s ease;
       box-shadow: 0 12px 24px rgba(15, 23, 42, .10);
       user-select:none;
+      text-decoration:none;
     }
 
     .SocialBtn:active{ transform: scale(.96); }
@@ -125,19 +126,10 @@
       transition: opacity .2s ease, transform .2s ease;
     }
 
-    /* Expand only on devices where hover makes sense */
     @media (min-width: 640px){
-      .SocialBtn:hover{
-        width:118px;
-      }
-      .SocialBtn:hover .label{
-        opacity:1;
-        transform: translateX(0);
-      }
-      .SocialBtn:hover .icon{
-        opacity:0;
-        transform: scale(.9);
-      }
+      .SocialBtn:hover{ width:118px; }
+      .SocialBtn:hover .label{ opacity:1; transform: translateX(0); }
+      .SocialBtn:hover .icon{ opacity:0; transform: scale(.9); }
     }
 
     .SocialBtn.instagram{
@@ -195,6 +187,9 @@
     .item7 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 7) * -1); }
     .item8 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 8) * -1); }
     /* ===== /Scrolling slider ===== */
+
+    /* ===== Regions collapsible ===== */
+    .regions-hidden { display:none; }
   </style>
 </head>
 
@@ -218,7 +213,7 @@
 
         <!-- Right side -->
         <div class="flex items-center gap-3">
-          <!-- ✅ Social buttons (left of burger) -->
+          <!-- Social buttons -->
           <div class="social-wrap">
             <a class="SocialBtn instagram"
                href="https://www.instagram.com/autokomek?utm_source=qr&igsh=MXhzNWdpY3cwMno4cg=="
@@ -244,14 +239,12 @@
             </a>
           </div>
 
-          <!-- Desktop call badge (optional, оставил чтобы красиво выглядело на ПК) -->
           <a href="tel:+77750092909"
              class="hidden md:flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg">
             <i class="fas fa-phone-alt text-sm"></i>
             <span class="font-bold">+7 775 009 2909</span>
           </a>
 
-          <!-- Burger -->
           <button id="burgerBtn"
                   class="md:hidden w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-700 active:scale-95 transition"
                   aria-label="Открыть меню"
@@ -275,31 +268,31 @@
             </a>
           </div>
 
-          <!-- Clean list -->
+          <!-- Clean list (same items) -->
           <div class="grid grid-cols-1 gap-2 max-h-[60vh] overflow-auto pr-1">
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Караганда</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Юго-Восток</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Майкудук</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Пришахтинск</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Актас</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Сарань</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Ботакара</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Каркаралинск</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Аксу-Аюлы</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Акчатау</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Балхаш</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Агадырь</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Актогай</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Акжал</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Аккой</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Атасу</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Кызылжар</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Шубарколь</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Жайрем</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Каражал</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Ошаганды</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Осакаровка</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
-            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Аршалы</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Караганда</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Юго-Восток</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Майкудук</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Пришахтинск</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Актас</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Сарань</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Ботакара</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Каркаралинск</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Аксу-Аюлы</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Акчатау</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Балхаш</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Агадырь</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Актогай</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Акжал</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Аккой</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Атасу</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Кызылжар</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Шубарколь</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Жайрем</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Каражал</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Ошаганды</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Осакаровка</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
+            <a href="https://wa.me/77750092909" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black text-slate-900 flex items-center justify-between"><span>Эвакуатор Аршалы</span><span class="text-slate-400 font-bold text-sm">24/7</span></a>
           </div>
         </div>
       </div>
@@ -431,37 +424,222 @@
     </div>
   </section>
 
-  <!-- REGIONS -->
+  <!-- REGIONS (collapsible + full list) -->
   <section id="regions" class="py-20 bg-slate-50 overflow-hidden">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
           <h2 class="text-3xl font-black">Города и <span class="text-red-500">регионы</span></h2>
           <p class="text-slate-500 mt-3 font-medium">Работаем 24/7.</p>
+
+          <!-- ✅ удобная кнопка показать/скрыть -->
+          <div class="mt-5 flex items-center justify-center">
+            <button id="toggleRegionsBtn"
+                    class="bg-white border border-slate-200 px-6 py-3 rounded-2xl font-black text-slate-900 shadow-sm hover:shadow-md transition active:scale-95 inline-flex items-center gap-2">
+              <i id="toggleRegionsIcon" class="fa-solid fa-chevron-down text-slate-500"></i>
+              <span id="toggleRegionsText">Показать все районы</span>
+            </button>
+          </div>
         </div>
 
+        <!-- ✅ всегда видно (быстрый доступ) -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
             <div class="flex items-start gap-3">
               <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
-              <div><div class="font-black text-slate-900">Караганда 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
-            </div>
-          </a>
-          <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
-              <div><div class="font-black text-slate-900">Юго-Восток 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
-            </div>
-          </a>
-          <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-start gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
-              <div><div class="font-black text-slate-900">Майкудук 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              <div>
+                <div class="font-black text-slate-900">Эвакуатор Караганда 24/7</div>
+                <div class="text-sm text-slate-500 mt-1">WhatsApp</div>
+              </div>
             </div>
           </a>
 
-          <!-- остальной список оставлен как у тебя (сокращено для читабельности в этом ответе) -->
-          <!-- ВАЖНО: если хочешь, я верну сюда весь полный список карточек один-в-один как раньше, без сокращений. -->
+          <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div class="font-black text-slate-900">Эвакуатор Юго-Восток 24/7</div>
+                <div class="text-sm text-slate-500 mt-1">WhatsApp</div>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-content-center shrink-0"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div class="font-black text-slate-900">Эвакуатор Майкудук 24/7</div>
+                <div class="text-sm text-slate-500 mt-1">WhatsApp</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- ✅ полный список (скрываем/раскрываем) -->
+        <div id="regionsAll" class="regions-hidden mt-6">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- FULL LIST FROM YOUR TЗ -->
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Караганда 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Юго-Восток 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Майкудук 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Пришахтинск 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Актас 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Сарань 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Ботакара 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Каркаралинск 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Аксу-Аюлы 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Акчатау 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Балхаш 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Агадырь 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Актогай 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Акжал 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Аккой 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Атасу 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Кызылжар 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="250">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Шубарколь 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Жайрем 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="50">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Каражал 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Ошаганды 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="150">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Осакаровка 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/77750092909" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-start gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i class="fas fa-location-dot"></i></div>
+                <div><div class="font-black text-slate-900">Эвакуатор Аршалы 24/7</div><div class="text-sm text-slate-500 mt-1">WhatsApp</div></div>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -541,6 +719,14 @@
       </a>
     </div>
 
+    <div class="mt-6 text-xs text-slate-500">
+  Разработчик сайта —
+  <a href="https://wa.me/77074534518"
+     class="font-bold text-white hover:text-red-400 transition"
+     target="_blank" rel="noopener">
+    Anuken
+  </a>
+</div>
     <p class="text-slate-600 text-xs mt-8">© 2026 Все права защищены.</p>
   </footer>
 
@@ -560,6 +746,7 @@
   <script>
     AOS.init({ once: true, duration: 800 });
 
+    // burger
     const burgerBtn = document.getElementById('burgerBtn');
     const burgerIcon = document.getElementById('burgerIcon');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -595,6 +782,31 @@
       if (mobileMenu.contains(e.target) || burgerBtn.contains(e.target)) return;
       closeMenu();
     });
+
+    // regions show/hide
+    const toggleRegionsBtn = document.getElementById('toggleRegionsBtn');
+    const regionsAll = document.getElementById('regionsAll');
+    const toggleRegionsText = document.getElementById('toggleRegionsText');
+    const toggleRegionsIcon = document.getElementById('toggleRegionsIcon');
+
+    if (toggleRegionsBtn && regionsAll) {
+      toggleRegionsBtn.addEventListener('click', () => {
+        const hidden = regionsAll.classList.contains('regions-hidden');
+        if (hidden) {
+          regionsAll.classList.remove('regions-hidden');
+          toggleRegionsText.textContent = 'Скрыть все районы';
+          toggleRegionsIcon.classList.remove('fa-chevron-down');
+          toggleRegionsIcon.classList.add('fa-chevron-up');
+        } else {
+          regionsAll.classList.add('regions-hidden');
+          toggleRegionsText.textContent = 'Показать все районы';
+          toggleRegionsIcon.classList.remove('fa-chevron-up');
+          toggleRegionsIcon.classList.add('fa-chevron-down');
+          // мягко вернем к заголовку, чтобы не путаться
+          document.getElementById('regions')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
   </script>
 </body>
 </html>
